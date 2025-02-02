@@ -72,58 +72,6 @@ Traditional AI-powered code generation often provides code based on the AI's own
 *   **Code Review:** Always review the generated or corrected code to ensure it meets your requirements.
 *   **Experiment:** Explore different types of instructions and code to fully understand the capabilities of CPGI in CXR.
 
-## Hosting Your CXR Application
-
-To make your CXR application accessible over the internet, you'll need to host it. Here's a quick guide using Heroku (a recommended option for its ease of use):
-
-1.  **Create a Heroku Account:** Go to [https://www.heroku.com](https://www.heroku.com) and sign up for a free account.
-2.  **Install the Heroku CLI:** Download and install the Heroku Command Line Interface (CLI) from [https://devcenter.heroku.com/articles/heroku-cli](https://devcenter.heroku.com/articles/heroku-cli).
-3.  **Prepare Your Flask Application:**
-    *   **requirements.txt:** Create a `requirements.txt` file in your project directory:
-        ```bash
-        pip freeze > requirements.txt
-        ```
-    *   **Procfile:** Create a file named `Procfile` (no extension) in your project directory:
-        ```
-        web: gunicorn app:app
-        ```
-        (Replace `app:app` if your main Flask application variable is different)
-    *   **Gunicorn:** Install `gunicorn`:
-        ```bash
-        pip install gunicorn
-        ```
-4.  **Create a Git Repository:** If you don't have one, initialize a Git repository in your project directory:
-        ```bash
-        git init
-        git add .
-        git commit -m "Initial Commit"
-        ```
-5.  **Login to Heroku:**
-        ```bash
-        heroku login
-        ```
-6.  **Create a Heroku App:**
-       ```bash
-        heroku create <your-app-name>
-        ```
-       Replace `<your-app-name>` with a unique name for your app.
-7.  **Deploy Your Application:**
-        ```bash
-        heroku git:remote -a <your-app-name>
-        git push heroku main
-        ```
-8.  **Open Your Application:**
-        ```bash
-        heroku open
-        ```
-    * This will open your application in your default browser.
-
-**Important Considerations**
-
-*   **Environment Variables:** Use environment variables for your Google API key (and other sensitive data). Store these variables in Heroku's config vars: `Settings > Config Vars`. You can access environment variables using `os.environ.get("variable_name")`.
-
-*   **Heroku Free Tier:** Be aware of the limitations of Heroku's free tier (app sleeps after inactivity).
-*   **Custom Domain:** If you want to use a custom domain name, you must register one and configure its DNS to point to your application.
 
 ## Conclusion
 
