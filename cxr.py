@@ -5,7 +5,7 @@ import re
 
 app = Flask(__name__)
 
-GOOGLE_API_KEY = "AIzaSyBEKTTtyQ8hu1aEzb12fch0rid5kape9HE"
+GOOGLE_API_KEY = ""
 GUIDE_URL = "https://docs.google.com/document/d/1QLumD13Xp71w1r_T8jLhaBveS20qGMTItfhFhPBsdWw/edit?usp=sharing"
 
 genai.configure(api_key=GOOGLE_API_KEY)
